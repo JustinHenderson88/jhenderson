@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Name — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap"
+    rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --bg: #0a0a0a;
@@ -17,12 +26,14 @@
       --text: #e8e4dc;
       --muted: #4a4a4a;
       --accent: #c8f06c;
-      --accent-dim: rgba(200,240,108,0.08);
+      --accent-dim: rgba(200, 240, 108, 0.08);
       --font-display: 'Syne', sans-serif;
       --font-mono: 'DM Mono', monospace;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background: var(--bg);
@@ -47,7 +58,11 @@
       transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
       mix-blend-mode: difference;
     }
-    .cursor.hover { width: 40px; height: 40px; }
+
+    .cursor.hover {
+      width: 40px;
+      height: 40px;
+    }
 
     /* Noise texture overlay */
     body::before {
@@ -63,7 +78,9 @@
     /* ── Nav ── */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
       display: flex;
       justify-content: space-between;
@@ -72,11 +89,13 @@
       border-bottom: 1px solid transparent;
       transition: border-color 0.3s, background 0.3s;
     }
+
     nav.scrolled {
       border-color: var(--border);
-      background: rgba(10,10,10,0.92);
+      background: rgba(10, 10, 10, 0.92);
       backdrop-filter: blur(12px);
     }
+
     .nav-logo {
       font-family: var(--font-display);
       font-weight: 800;
@@ -85,7 +104,13 @@
       color: var(--text);
       text-decoration: none;
     }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
     .nav-links a {
       color: var(--muted);
       text-decoration: none;
@@ -94,7 +119,10 @@
       text-transform: uppercase;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--accent); }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
 
     /* ── Hero ── */
     #hero {
@@ -109,13 +137,23 @@
 
     .hero-grid-line {
       position: absolute;
-      top: 0; bottom: 0;
+      top: 0;
+      bottom: 0;
       width: 1px;
       background: var(--border);
     }
-    .hero-grid-line:nth-child(1) { left: 25%; }
-    .hero-grid-line:nth-child(2) { left: 50%; }
-    .hero-grid-line:nth-child(3) { left: 75%; }
+
+    .hero-grid-line:nth-child(1) {
+      left: 25%;
+    }
+
+    .hero-grid-line:nth-child(2) {
+      left: 50%;
+    }
+
+    .hero-grid-line:nth-child(3) {
+      left: 75%;
+    }
 
     .hero-badge {
       font-size: 11px;
@@ -129,6 +167,7 @@
       opacity: 0;
       animation: fadeUp 0.8s ease 0.2s forwards;
     }
+
     .hero-badge::before {
       content: '';
       display: block;
@@ -148,7 +187,9 @@
       animation: fadeUp 0.8s ease 0.35s forwards;
     }
 
-    .hero-name span { color: var(--accent); }
+    .hero-name span {
+      color: var(--accent);
+    }
 
     .hero-bottom {
       display: flex;
@@ -158,13 +199,18 @@
       opacity: 0;
       animation: fadeUp 0.8s ease 0.5s forwards;
     }
+
     .hero-bio {
       max-width: 380px;
       color: var(--muted);
       font-size: 13px;
       line-height: 1.8;
     }
-    .hero-bio strong { color: var(--text); font-weight: 400; }
+
+    .hero-bio strong {
+      color: var(--text);
+      font-weight: 400;
+    }
 
     .hero-scroll {
       display: flex;
@@ -176,6 +222,7 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
     }
+
     .scroll-line {
       width: 1px;
       height: 48px;
@@ -199,6 +246,7 @@
       align-items: center;
       gap: 1rem;
     }
+
     .section-label::after {
       content: '';
       flex: 1;
@@ -225,6 +273,7 @@
       overflow: hidden;
       transition: background 0.3s;
     }
+
     .project-card::after {
       content: '';
       position: absolute;
@@ -233,14 +282,21 @@
       opacity: 0;
       transition: opacity 0.3s;
     }
-    .project-card:hover { background: var(--surface); }
-    .project-card:hover::after { opacity: 1; }
+
+    .project-card:hover {
+      background: var(--surface);
+    }
+
+    .project-card:hover::after {
+      opacity: 1;
+    }
 
     .project-number {
       font-size: 11px;
       color: var(--muted);
       letter-spacing: 0.1em;
     }
+
     .project-title {
       font-family: var(--font-display);
       font-size: 1.4rem;
@@ -248,17 +304,20 @@
       letter-spacing: -0.02em;
       line-height: 1.2;
     }
+
     .project-desc {
       color: var(--muted);
       font-size: 13px;
       flex: 1;
     }
+
     .project-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
       margin-top: 0.5rem;
     }
+
     .tag {
       font-size: 10px;
       letter-spacing: 0.1em;
@@ -268,7 +327,11 @@
       color: var(--muted);
       transition: border-color 0.2s, color 0.2s;
     }
-    .project-card:hover .tag { border-color: var(--accent); color: var(--accent); }
+
+    .project-card:hover .tag {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
 
     .project-links {
       display: flex;
@@ -277,6 +340,7 @@
       position: relative;
       z-index: 1;
     }
+
     .project-links a {
       font-size: 11px;
       letter-spacing: 0.1em;
@@ -288,8 +352,15 @@
       align-items: center;
       gap: 0.4rem;
     }
-    .project-links a:hover { color: var(--accent); }
-    .project-links a svg { width: 12px; height: 12px; }
+
+    .project-links a:hover {
+      color: var(--accent);
+    }
+
+    .project-links a svg {
+      width: 12px;
+      height: 12px;
+    }
 
     /* ── Contact ── */
     #contact {
@@ -307,7 +378,10 @@
       line-height: 1;
       margin-bottom: 3rem;
     }
-    .contact-heading span { color: var(--accent); }
+
+    .contact-heading span {
+      color: var(--accent);
+    }
 
     .contact-links {
       display: flex;
@@ -327,9 +401,18 @@
       transition: padding-left 0.3s;
       group: true;
     }
-    .contact-link-item:hover { padding-left: 1rem; }
-    .contact-link-item:hover .contact-link-label { color: var(--accent); }
-    .contact-link-item:hover .contact-link-arrow { transform: rotate(-45deg); }
+
+    .contact-link-item:hover {
+      padding-left: 1rem;
+    }
+
+    .contact-link-item:hover .contact-link-label {
+      color: var(--accent);
+    }
+
+    .contact-link-item:hover .contact-link-arrow {
+      transform: rotate(-45deg);
+    }
 
     .contact-link-label {
       font-family: var(--font-display);
@@ -338,11 +421,13 @@
       letter-spacing: -0.01em;
       transition: color 0.3s;
     }
+
     .contact-link-value {
       font-size: 12px;
       color: var(--muted);
       letter-spacing: 0.05em;
     }
+
     .contact-link-arrow {
       font-size: 1.2rem;
       color: var(--muted);
@@ -363,12 +448,27 @@
 
     /* ── Animations ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     @keyframes scrollPulse {
-      0%, 100% { opacity: 0.3; }
-      50%       { opacity: 1; }
+
+      0%,
+      100% {
+        opacity: 0.3;
+      }
+
+      50% {
+        opacity: 1;
+      }
     }
 
     .reveal {
@@ -376,6 +476,7 @@
       transform: translateY(32px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
+
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
@@ -383,15 +484,39 @@
 
     /* ── Responsive ── */
     @media (max-width: 768px) {
-      nav { padding: 1.2rem 1.5rem; }
-      .nav-links { gap: 1.5rem; }
-      #hero, section { padding-left: 1.5rem; padding-right: 1.5rem; }
-      .hero-bottom { flex-direction: column; gap: 2rem; align-items: flex-start; }
-      .hero-scroll { display: none; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+      nav {
+        padding: 1.2rem 1.5rem;
+      }
+
+      .nav-links {
+        gap: 1.5rem;
+      }
+
+      #hero,
+      section {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .hero-bottom {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+      }
+
+      .hero-scroll {
+        display: none;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <div class="cursor" id="cursor"></div>
@@ -414,13 +539,13 @@
     <p class="hero-badge">Available for work · 2025</p>
 
     <h1 class="hero-name">
-      Your<br/>
+      Your<br />
       Name<span>.</span>
     </h1>
 
     <div class="hero-bottom">
       <p class="hero-bio">
-        <strong>Designer · Developer · Creator.</strong><br/>
+        <strong>Designer · Developer · Creator.</strong><br />
         I build things that live on the internet. Focused on craft, clarity, and experiences that feel inevitable.
       </p>
       <div class="hero-scroll">
@@ -439,7 +564,8 @@
       <div class="project-card reveal">
         <span class="project-number">001</span>
         <h3 class="project-title">Project Alpha</h3>
-        <p class="project-desc">A short description of what this project does, the problem it solves, and why it matters. Replace this with your own words.</p>
+        <p class="project-desc">A short description of what this project does, the problem it solves, and why it
+          matters. Replace this with your own words.</p>
         <div class="project-tags">
           <span class="tag">React</span>
           <span class="tag">Node.js</span>
@@ -447,11 +573,18 @@
         </div>
         <div class="project-links">
           <a href="#" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+            </svg>
             GitHub
           </a>
           <a href="#" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
             Live Demo
           </a>
         </div>
@@ -460,7 +593,8 @@
       <div class="project-card reveal" style="transition-delay:0.1s">
         <span class="project-number">002</span>
         <h3 class="project-title">Project Beta</h3>
-        <p class="project-desc">Describe the challenge, your role, and the impact. A sentence or two is plenty — let the work speak for itself.</p>
+        <p class="project-desc">Describe the challenge, your role, and the impact. A sentence or two is plenty — let the
+          work speak for itself.</p>
         <div class="project-tags">
           <span class="tag">Python</span>
           <span class="tag">FastAPI</span>
@@ -468,11 +602,18 @@
         </div>
         <div class="project-links">
           <a href="#" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+            </svg>
             GitHub
           </a>
           <a href="#" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
             Live Demo
           </a>
         </div>
@@ -481,7 +622,8 @@
       <div class="project-card reveal" style="transition-delay:0.2s">
         <span class="project-number">003</span>
         <h3 class="project-title">Project Gamma</h3>
-        <p class="project-desc">What was built, how it was built, and who it was built for. Keep it punchy and specific to make it memorable.</p>
+        <p class="project-desc">What was built, how it was built, and who it was built for. Keep it punchy and specific
+          to make it memorable.</p>
         <div class="project-tags">
           <span class="tag">TypeScript</span>
           <span class="tag">Next.js</span>
@@ -489,11 +631,18 @@
         </div>
         <div class="project-links">
           <a href="#" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+            </svg>
             GitHub
           </a>
           <a href="#" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
             Live Demo
           </a>
         </div>
@@ -506,7 +655,7 @@
   <section id="contact">
     <p class="section-label reveal">Get In Touch</p>
     <h2 class="contact-heading reveal">
-      Let's build<br/>something<span> great.</span>
+      Let's build<br />something<span> great.</span>
     </h2>
 
     <div class="contact-links reveal">
@@ -539,35 +688,7 @@
     <span>🔨 Built in ATX</span>
   </footer>
 
-  <script>
-    // Custom cursor
-    const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', e => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top  = e.clientY + 'px';
-    });
-    document.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-    });
-
-    // Sticky nav
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    });
-
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
-  </script>
+  <script src="main.js"></script>
 </body>
+
 </html>
